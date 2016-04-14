@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crimea Tour</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="nav">
+			<li><a href="#vorontsov1">Vorontsov Palace</a></li>
+			<li><a href="#aiPetri1">Ai Petri</a></li>
+			<li><a href="#fontain1">Fountain of Tears</a></li>
+			<li><a href="#khan1">Khan Palace</a></li>
+			<li><a href="#chufut1">Chufut Kale</a></li>
+		</div>
+		
+			<div id="vorontsov1" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+			<div class="vorontsov2" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+			<div class="vorontsov3" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+			<div class="vorontsov4" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+			<div class="vorontsov5" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+			<div class="vorontsov6" data-stellar-background-ratio="0.5"><p>Vorontsov Palace</p></div>
+					
+			<div id="aiPetri1" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+			<div class="aiPetri2" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+			<div class="aiPetri3" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+			<div class="aiPetri4" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+			<div class="aiPetri5" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+			<div class="aiPetri6" data-stellar-background-ratio="0.5"><p>Ai Petri</p></div>
+
+			<div id="fontain1" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+			<div class="fontain2" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+			<div class="fontain3" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+			<div class="fontain4" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+			<div class="fontain5" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+			<div class="fontain6" data-stellar-background-ratio="0.5"><p>Fontain of Tears</p></div>
+
+			<div id="khan1" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+			<div class="khan2" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+			<div class="khan3" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+			<div class="khan4" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+			<div class="khan5" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+			<div class="khan6" data-stellar-background-ratio="0.5"><p>Khan Palace</p></div>
+
+			<div id="chufut1" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+			<div class="chufut2" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+			<div class="chufut3" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+			<div class="chufut4" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+			<div class="chufut5" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+			<div class="chufut6" data-stellar-background-ratio="0.5"><p>Chufut Kale</p></div>
+
+			<div id="footer">
+			    <p> Copyright &copy; 2015 Julia Stanina</p>
+			</div>
+	</div>
+
+	<script type="text/javascript" src="js/stellar/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$("li").click(function(){
+				$("li").removeClass("active");
+				$(this).addClass("active");
+			})
+			
+		})
+		// Window load event used just in case window height is dependant upon images
+$(window).bind("load", function() { 
+       
+       var footerHeight = 0,
+           footerTop = 0,
+           $footer = $("#footer");
+           
+       positionFooter();
+       
+       function positionFooter() {
+       
+                footerHeight = $footer.height();
+                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+       
+               if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+                   $footer.css({
+                        position: "absolute"
+                   }).animate({
+                        top: footerTop
+                   })
+               } else {
+                   $footer.css({
+                        position: "static"
+                   })
+               }
+               
+       }
+
+       $(window)
+               .scroll(positionFooter)
+               .resize(positionFooter)
+               
+});
+	</script>
+</body>
+</html>
